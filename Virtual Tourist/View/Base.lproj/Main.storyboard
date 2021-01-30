@@ -49,6 +49,7 @@
                     <navigationItem key="navigationItem" id="4Ga-8X-nNp"/>
                     <connections>
                         <outlet property="mapView" destination="Xr1-yT-atj" id="WNw-Fn-Taj"/>
+                        <segue destination="Ehr-l8-gP4" kind="show" identifier="showPhotoAlbumView" id="D8U-mB-Eap"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -58,19 +59,19 @@
         <!--Photo Album View Controller-->
         <scene sceneID="xe8-BM-96E">
             <objects>
-                <viewController id="Ehr-l8-gP4" userLabel="Photo Album View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="photoAlbum" id="Ehr-l8-gP4" userLabel="Photo Album View Controller" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xBk-Ag-E2f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wqU-PV-KWB">
-                                <rect key="frame" x="0.0" y="44" width="414" height="181"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="181"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="181" id="FFx-FI-yYn"/>
                                 </constraints>
                             </mapView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="faU-wC-rbL">
-                                <rect key="frame" x="0.0" y="233" width="414" height="629"/>
+                                <rect key="frame" x="0.0" y="277" width="414" height="585"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lcf-cp-7JL">
                                     <size key="itemSize" width="128" height="128"/>
@@ -102,6 +103,7 @@
                             <constraint firstItem="hzF-rq-fuT" firstAttribute="trailing" secondItem="wqU-PV-KWB" secondAttribute="trailing" id="xEx-Ff-NfS"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="wTV-cs-yQh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPP-3E-7fn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

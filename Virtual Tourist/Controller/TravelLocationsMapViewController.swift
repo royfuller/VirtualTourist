@@ -36,9 +36,8 @@ class TravelLocationsMapViewController: UIViewController, MKMapViewDelegate, UIG
 
         if pinView == nil {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            pinView!.canShowCallout = true
+            pinView!.canShowCallout = false
             pinView!.pinTintColor = .red
-            pinView!.rightCalloutAccessoryView = UIButton(type: .infoLight)
         }
         else {
             pinView!.annotation = annotation
@@ -47,8 +46,8 @@ class TravelLocationsMapViewController: UIViewController, MKMapViewDelegate, UIG
         return pinView
     }
 
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        // TODO: Transition to PhotoAlbumView
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        self.performSegue(withIdentifier: "showPhotoAlbumView", sender: self)
     }
     
     // MARK: Gesture recognizer delegate methods
