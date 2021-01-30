@@ -10,6 +10,10 @@ import MapKit
 
 class TravelLocationsMapViewController: UIViewController, MKMapViewDelegate, UIGestureRecognizerDelegate {
 
+    // MARK: Variables
+    
+    var dataController: DataController!
+    
     // MARK: Outlets
 
     @IBOutlet weak var mapView: MKMapView!
