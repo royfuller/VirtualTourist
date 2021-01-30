@@ -64,10 +64,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wqU-PV-KWB">
-                                <rect key="frame" x="0.0" y="44" width="414" height="244"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="181"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="181" id="FFx-FI-yYn"/>
+                                </constraints>
                             </mapView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="faU-wC-rbL">
-                                <rect key="frame" x="0.0" y="288" width="414" height="574"/>
+                                <rect key="frame" x="0.0" y="233" width="414" height="629"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lcf-cp-7JL">
                                     <size key="itemSize" width="128" height="128"/>
@@ -94,10 +97,9 @@
                             <constraint firstItem="faU-wC-rbL" firstAttribute="leading" secondItem="hzF-rq-fuT" secondAttribute="leading" id="Hy9-Rc-7ol"/>
                             <constraint firstItem="hzF-rq-fuT" firstAttribute="trailing" secondItem="faU-wC-rbL" secondAttribute="trailing" id="Ycz-zA-mKO"/>
                             <constraint firstItem="wqU-PV-KWB" firstAttribute="top" secondItem="hzF-rq-fuT" secondAttribute="top" id="glk-k8-7fL"/>
-                            <constraint firstItem="faU-wC-rbL" firstAttribute="top" secondItem="wqU-PV-KWB" secondAttribute="bottom" id="l2e-nk-6z7"/>
+                            <constraint firstItem="faU-wC-rbL" firstAttribute="top" secondItem="wqU-PV-KWB" secondAttribute="bottom" constant="8" id="l2e-nk-6z7"/>
                             <constraint firstItem="wqU-PV-KWB" firstAttribute="leading" secondItem="hzF-rq-fuT" secondAttribute="leading" id="lwu-Xz-QtN"/>
                             <constraint firstItem="hzF-rq-fuT" firstAttribute="trailing" secondItem="wqU-PV-KWB" secondAttribute="trailing" id="xEx-Ff-NfS"/>
-                            <constraint firstItem="hzF-rq-fuT" firstAttribute="bottom" secondItem="wqU-PV-KWB" secondAttribute="bottom" constant="574" id="yHR-6y-2xz"/>
                         </constraints>
                     </view>
                 </viewController>

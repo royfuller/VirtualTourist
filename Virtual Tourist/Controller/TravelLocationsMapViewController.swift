@@ -47,6 +47,10 @@ class TravelLocationsMapViewController: UIViewController, MKMapViewDelegate, UIG
         return pinView
     }
 
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        // TODO: Transition to PhotoAlbumView
+    }
+    
     // MARK: Gesture recognizer delegate methods
 
     // The below code was copied from https://knowledge.udacity.com/questions/249077
