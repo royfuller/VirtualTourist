@@ -60,6 +60,11 @@ class TravelLocationsMapViewController: UIViewController, MKMapViewDelegate, UIG
     @objc func handleTap(gestureRecognizer: UILongPressGestureRecognizer) {
         let location = gestureRecognizer.location(in: mapView)
         let coordinate = mapView.convert(location, toCoordinateFrom: mapView)
+        VirtualTouristClient.getPhotos(lat: CLLocationDegrees(coordinate.latitude).description, lon: CLLocationDegrees(coordinate.longitude).description) { (errorDescription) in
+            if(errorDescription != nil) {
+                print(errorDescription!)
+            }
+        }
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
         mapView.addAnnotation(annotation)

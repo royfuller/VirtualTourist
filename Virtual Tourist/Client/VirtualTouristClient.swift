@@ -22,4 +22,30 @@ class VirtualTouristClient {
             return URL(string: stringValue)!
         }
     }
+    
+    class func getPhotos(lat: String, lon: String, completionHandler: @escaping (String?) -> Void) {
+        let task = URLSession.shared.dataTask(with: Endpoints.flickrSearchPhotos(lat, lon).url) { (data, response, error) in
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completionHandler(error?.localizedDescription)
+                }
+                return
+            }
+            let decoder = JSONDecoder()
+            do {
+                let responseObject = try decoder.decode(FlickrSearchPhotosResponse.self, from: data)
+                DispatchQueue.main.async {
+                    print(responseObject)
+                    completionHandler(nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completionHandler(error.localizedDescription)
+                }
+                return
+            }
+        }
+        task.resume()
+    }
+
 }
