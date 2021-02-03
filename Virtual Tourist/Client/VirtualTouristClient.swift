@@ -23,11 +23,11 @@ class VirtualTouristClient {
         }
     }
     
-    class func getPhotos(lat: String, lon: String, completionHandler: @escaping (String?) -> Void) {
+    class func getPhotos(lat: String, lon: String, completionHandler: @escaping (String?, FlickrSearchPhotosResponse?) -> Void) {
         let task = URLSession.shared.dataTask(with: Endpoints.flickrSearchPhotos(lat, lon).url) { (data, response, error) in
             guard let data = data else {
                 DispatchQueue.main.async {
-                    completionHandler(error?.localizedDescription)
+                    completionHandler(error?.localizedDescription, nil)
                 }
                 return
             }
@@ -35,12 +35,11 @@ class VirtualTouristClient {
             do {
                 let responseObject = try decoder.decode(FlickrSearchPhotosResponse.self, from: data)
                 DispatchQueue.main.async {
-                    print(responseObject)
-                    completionHandler(nil)
+                    completionHandler(nil, responseObject)
                 }
             } catch {
                 DispatchQueue.main.async {
-                    completionHandler(error.localizedDescription)
+                    completionHandler(error.localizedDescription, nil)
                 }
                 return
             }

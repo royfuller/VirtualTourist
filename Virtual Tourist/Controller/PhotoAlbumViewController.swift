@@ -8,6 +8,16 @@
 import UIKit
 import MapKit
 
-class PhotoAlbumViewController: UIViewController {
+class PhotoAlbumViewController: UIViewController, UICollectionViewDelegate {
     
+    //MARK: Variables
+    
+    var latitude: String!
+    var longitude: String!
+    
+    // MARK: Lifecycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
